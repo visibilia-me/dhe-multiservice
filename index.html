@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DHE Multiservice — Idraulico Bologna</title>
+<meta name="description" content="Idraulico professionale a Bologna. Intervento rapido, lavoro garantito.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#2C2C2C;
+  --blue-mid:#F97316;
+  --blue-light:#F97316;
+  --blue-pale:#f5f5f5;
+  --accent:#F97316;
+  --accent-dark:#1A1A1A;
+  --gray:#F8F9FB;
+  --gray2:#EEF0F3;
+  --gray3:#D1D5DB;
+  --text:#0A1628;
+  --text2:#4B5563;
+  --text3:#9CA3AF;
+  --white:#FFFFFF;
+  --radius:10px;
+  --radius2:18px;
+  --shadow:0 2px 20px rgba(10,22,40,0.07);
+  --shadow2:0 12px 48px rgba(10,22,40,0.12);
+  --font-title:'Bebas Neue',sans-serif;
+  --font-body:'DM Sans',sans-serif;
+  --nav-h:64px;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);color:var(--text);background:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover;font-size:0;color:transparent}
+a{text-decoration:none;color:inherit}
+
+/* ── UTILITY ── */
+.container{max-width:1100px;margin:0 auto;padding:0 28px}
+.section{padding:88px 0}
+.tag{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--blue-light);margin-bottom:12px}
+.h2{font-family:var(--font-title);font-size:clamp(36px,4.5vw,54px);line-height:1.05;color:var(--text);letter-spacing:.5px}
+.h2 span{color:var(--blue-light)}
+.sub{font-size:17px;color:var(--text2);line-height:1.75;font-weight:300}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:999;height:var(--nav-h);background:rgba(255,255,255,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray2);transition:box-shadow .3s}
+.nav.scrolled{box-shadow:var(--shadow)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:100%}
+.nav-logo{font-family:var(--font-title);font-size:22px;letter-spacing:1px;color:var(--blue)}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:32px}
+.nav-links a{font-size:14px;font-weight:500;color:var(--text2);transition:color .2s}
+.nav-links a:hover{color:var(--blue)}
+.nav-cta{background:var(--blue);color:var(--white);font-family:var(--font-body);font-size:14px;font-weight:600;padding:10px 22px;border-radius:6px;border:none;cursor:pointer;transition:all .2s}
+.nav-cta:hover{background:var(--blue-mid)}
+
+/* ── HERO ── */
+.hero{background:var(--blue);min-height:100vh;display:flex;align-items:center;padding-top:var(--nav-h);position:relative;overflow:hidden}
+.hero-bg-foto{position:absolute;inset:0;opacity:.18}
+.hero-bg-foto img{object-position:center}
+.hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:60px 60px}
+.hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 420px;gap:64px;align-items:center;padding:80px 0}
+.hero-label{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:4px;padding:5px 14px;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.9);margin-bottom:24px}
+.hero-title{font-family:var(--font-title);font-size:clamp(52px,6.5vw,88px);line-height:1;color:var(--white);margin-bottom:20px;letter-spacing:.5px}
+.hero-title em{color:var(--accent);font-style:normal}
+.hero-sub{font-size:18px;color:rgba(255,255,255,.65);line-height:1.72;font-weight:300;margin-bottom:40px;max-width:500px}
+.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--font-body);font-size:15px;font-weight:600;padding:14px 28px;border-radius:6px;border:none;cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn-accent{background:var(--accent);color:var(--blue)}
+.btn-accent:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,.3)}
+.btn-ghost:hover{border-color:var(--white);background:rgba(255,255,255,.06)}
+.hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius2);padding:28px;backdrop-filter:blur(8px)}
+.hero-card-title{font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:20px}
+.hero-stats{display:flex;flex-direction:column;gap:16px}
+.hero-stat{display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.07)}
+.hero-stat:last-child{border-bottom:none}
+.hero-stat-label{font-size:14px;color:rgba(255,255,255,.8)}
+.hero-stat-value{font-family:var(--font-title);font-size:22px;color:var(--white);letter-spacing:.5px}
+.hero-stat-value span{color:#F5C518}
+
+/* ── STATS BAR ── */
+.statsbar{background:var(--accent);padding:20px 0}
+.statsbar-inner{display:flex;justify-content:center;align-items:center}
+.statsbar-item{display:flex;align-items:center;gap:10px;padding:4px 40px;border-right:1px solid rgba(10,22,40,.15)}
+.statsbar-item:last-child{border-right:none}
+.statsbar-num{font-family:var(--font-title);font-size:26px;color:var(--blue);line-height:1}
+.statsbar-lbl{font-size:12px;color:rgba(10,22,40,.6);font-weight:500;text-transform:uppercase;letter-spacing:.5px}
+
+/* ── SERVIZI ── */
+.services{background:var(--white)}
+.services-top{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;margin-bottom:56px}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service-card{background:var(--gray);border-radius:var(--radius2);padding:28px 24px;transition:all .25s;border:1px solid transparent}
+.service-card:hover{background:var(--white);border-color:var(--blue-light);box-shadow:var(--shadow2);transform:translateY(-4px)}
+.service-dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-bottom:20px}
+.service-name{font-family:var(--font-title);font-size:22px;letter-spacing:.5px;color:var(--text);margin-bottom:10px}
+.service-desc{font-size:14px;color:var(--text2);line-height:1.65}
+.service-arrow{margin-top:20px;font-size:13px;color:var(--blue-light);font-weight:600;opacity:0;transition:opacity .2s}
+.service-card:hover .service-arrow{opacity:1}
+
+/* ── GALLERIA ── */
+.gallery{background:var(--blue)}
+.gallery-inner{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.gallery-left{padding:88px 64px 88px 0}
+.gallery-left .tag{color:rgba(245,197,24,.8)}
+.gallery-left .h2{color:var(--white)}
+.gallery-left .h2 span{color:var(--accent)}
+.gallery-left .sub{color:rgba(255,255,255,.55);margin-top:16px}
+.gallery-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:32px 0 32px 32px}
+.gallery-item{border-radius:var(--radius);overflow:hidden;aspect-ratio:1;background:rgba(255,255,255,.05)}
+.gallery-item:first-child{grid-column:span 2;aspect-ratio:2/1}
+.gallery-item img{transition:transform .4s ease}
+.gallery-item:hover img{transform:scale(1.04)}
+
+/* ── GARANZIA ── */
+.guarantee{background:var(--gray)}
+.guarantee-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--gray3);border-radius:var(--radius2);overflow:hidden}
+.guarantee-item{background:var(--white);padding:36px 28px;text-align:center}
+.guarantee-icon{font-size:28px;margin-bottom:16px}
+.guarantee-title{font-family:var(--font-title);font-size:20px;letter-spacing:.5px;color:var(--text);margin-bottom:8px}
+.guarantee-desc{font-size:13px;color:var(--text2);line-height:1.6}
+
+/* ── RECENSIONI ── */
+.reviews{background:var(--white)}
+.reviews-header{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:end;margin-bottom:48px}
+.reviews-badge{display:flex;align-items:center;gap:16px;background:var(--blue);color:var(--white);padding:16px 24px;border-radius:var(--radius)}
+.reviews-badge-num{font-family:var(--font-title);font-size:40px;color:var(--accent);line-height:1}
+.reviews-badge-detail{font-size:12px;color:rgba(255,255,255,.6)}
+.reviews-badge-stars{font-size:16px;color:var(--accent);margin-bottom:2px}
+.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.review-card{border:1px solid var(--gray2);border-radius:var(--radius2);padding:24px;position:relative}
+.review-card::before{content:'';position:absolute;top:0;left:24px;right:24px;height:3px;background:var(--accent);border-radius:0 0 3px 3px}
+.review-stars{font-size:14px;color:var(--accent);margin-bottom:12px;letter-spacing:2px}
+.review-text::before{content:'\201C'}.review-text::after{content:'\201D'}.review-text{font-size:15px;color:var(--text);line-height:1.7;margin-bottom:16px}
+.review-author{font-size:13px;font-weight:600;color:var(--text)}
+.review-when{font-size:12px;color:var(--text3);margin-top:2px}
+
+/* ── CHI SIAMO ── */
+.about{background:var(--white);padding:88px 0}
+.about-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-visual{position:relative}
+.about-img{border-radius:var(--radius2);overflow:hidden;aspect-ratio:4/5;background:var(--gray)}
+.about-img img{object-position:center}
+.about-badge{position:absolute;top:32px;right:-24px;background:var(--blue);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow2)}
+.about-badge-num{font-family:var(--font-title);font-size:40px;color:var(--accent);line-height:1}
+.about-badge-text{font-size:11px;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1px;font-weight:600}
+.about-points{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:32px}
+.about-point{background:var(--gray);border-radius:var(--radius);padding:16px}
+.about-point-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px;display:flex;align-items:center;gap:6px}
+.about-point-title::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
+.about-point-desc{font-size:12px;color:var(--text2);line-height:1.5;padding-left:12px}
+
+/* ── CONTATTI ── */
+.contacts{background:var(--blue);padding:88px 0}
+.contacts-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:start}
+.contacts-title .tag{color:rgba(245,197,24,.8)}
+.contacts-title .h2{color:var(--white);margin-bottom:0}
+.contacts-title .h2 span{color:var(--accent)}
+.contacts-items{display:flex;flex-direction:column;gap:0;margin-top:40px}
+.contact-item{display:flex;align-items:flex-start;gap:16px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.08)}
+.contact-item:last-child{border-bottom:none}
+.contact-icon{width:40px;height:40px;background:rgba(245,197,24,.12);border:1px solid rgba(245,197,24,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
+.contact-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:4px}
+.contact-value{font-size:16px;font-weight:500;color:var(--white)}
+.contact-value a{color:var(--accent)}
+.contact-value.muted{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;line-height:1.8}
+.contacts-map{border-radius:var(--radius2);overflow:hidden;height:420px;background:rgba(255,255,255,.05)}
+.contacts-map iframe{width:100%;height:100%;border:none}
+.contacts-cta{margin-top:32px}
+
+/* ── FOOTER ── */
+.footer{background:#060D1A;padding:56px 0 24px}
+.footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:40px}
+.footer-logo{font-family:var(--font-title);font-size:24px;letter-spacing:1px;color:var(--white);margin-bottom:10px}
+.footer-logo span{color:var(--accent)}
+.footer-desc{font-size:14px;color:rgba(255,255,255,.4);line-height:1.7}
+.footer-heading{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.5);transition:color .2s}
+.footer-links a:hover{color:var(--white)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.footer-copy{font-size:13px;color:rgba(255,255,255,.25)}
+.footer-legal{display:flex;gap:20px}
+.footer-legal a{font-size:13px;color:rgba(255,255,255,.25);transition:color .2s}
+.footer-legal a:hover{color:rgba(255,255,255,.5)}
+
+/* ── MOBILE BAR ── */
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;background:var(--white);border-top:1px solid var(--gray2);padding:10px 16px;gap:10px}
+.mobile-bar a{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;border-radius:6px;font-size:14px;font-weight:600}
+.mobile-bar-call{background:var(--blue);color:var(--white)}
+.mobile-bar-wa{background:#25D366;color:var(--white)}
+
+/* ── COOKIE ── */
+.cookie{position:fixed;bottom:0;left:0;right:0;z-index:1000;background:#060D1A;color:rgba(255,255,255,.75);padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:13px;transform:translateY(100%);transition:transform .4s ease}
+.cookie.show{transform:none}
+.cookie-btn{background:var(--accent);color:var(--blue);border:none;border-radius:4px;padding:8px 20px;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap}
+
+/* ── MOBILE ── */
+@media(max-width:768px){
+  .section{padding:56px 0}
+  .nav-links{display:none}
+  .hero-inner{grid-template-columns:1fr;gap:32px}
+  .hero-card{display:none}
+  .statsbar-inner{flex-wrap:wrap}
+  .statsbar-item{padding:8px 20px;border-right:none;border-bottom:1px solid rgba(10,22,40,.1);width:50%}
+  .statsbar-item:nth-child(odd){border-right:1px solid rgba(10,22,40,.1)}
+  .statsbar-item:last-child,.statsbar-item:nth-last-child(2):nth-child(odd){border-bottom:none}
+  .services-top{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .gallery-inner{grid-template-columns:1fr}
+  .gallery-left{padding:56px 0 0}
+  .gallery-grid{padding:24px 0 0}
+  .gallery-grid{grid-template-columns:1fr 1fr}
+  .guarantee-inner{grid-template-columns:1fr 1fr}
+  .reviews-header{grid-template-columns:1fr}
+  .reviews-grid{grid-template-columns:1fr}
+  .about-inner{grid-template-columns:1fr}
+  .about-visual{display:none}
+  .about-points{grid-template-columns:1fr}
+  .contacts-inner{grid-template-columns:1fr}
+  .contacts-map{height:260px}
+  .footer-inner{grid-template-columns:1fr}
+  .mobile-bar{display:flex}
+  body{padding-bottom:72px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#" class="nav-logo"><span>DHE Multiservice</span></a>
+    <div class="nav-links">
+      <a href="#servizi">Servizi</a>
+      <a href="#lavori">Lavori</a>
+      <a href="#recensioni">Recensioni</a>
+      <a href="#contatti">Contatti</a>
+    </div>
+    <a href="tel:3517371644" class="nav-cta">📞 Chiama ora</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-foto">
+    <img src="foto/foto1.jpg" alt="" onerror="this.style.opacity=0">
+  </div>
+  <div class="hero-bg-grid"></div>
+  <div class="container hero-inner">
+    <div class="reveal">
+      <div class="hero-label">Idraulico · Bologna</div>
+      <h1 class="hero-title">Intervento rapido, problema risolto</h1>
+      <p class="hero-sub">Interventi rapidi su perdite, caldaie e impianti idrici a Bologna. Disponibile anche in emergenza.</p>
+      <div class="hero-ctas">
+        <a href="tel:3517371644" class="btn btn-accent">📞 Chiama ora</a>
+        <a href="https://wa.me/393517371644?text=Ciao,%20vorrei%20un%20preventivo" target="_blank" class="btn btn-ghost">💬 WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-card reveal" style="transition-delay:.2s">
+      <div class="hero-card-title">La nostra reputazione</div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-label">Valutazione Google</div>
+          <div class="hero-stat-value"><span>5</span> ★</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-label">Recensioni verificate</div>
+          <div class="hero-stat-value">27</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-label">Anni di esperienza</div>
+          <div class="hero-stat-value">20+</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-label">Interventi completati</div>
+          <div class="hero-stat-value">1.200+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="statsbar">
+  <div class="container statsbar-inner">
+    <div class="statsbar-item reveal">
+      <div><div class="statsbar-num">5★</div><div class="statsbar-lbl">Google</div></div>
+    </div>
+    <div class="statsbar-item reveal" style="transition-delay:.08s">
+      <div><div class="statsbar-num">27</div><div class="statsbar-lbl">Recensioni</div></div>
+    </div>
+    <div class="statsbar-item reveal" style="transition-delay:.16s">
+      <div><div class="statsbar-num">20+</div><div class="statsbar-lbl">Anni</div></div>
+    </div>
+    <div class="statsbar-item reveal" style="transition-delay:.24s">
+      <div><div class="statsbar-num">H24</div><div class="statsbar-lbl">Reperibile</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVIZI -->
+<section class="section services" id="servizi">
+  <div class="container">
+    <div class="services-top">
+      <div>
+        <div class="tag reveal">Cosa facciamo</div>
+        <h2 class="h2 reveal">I nostri <span>servizi</span></h2>
+      </div>
+      <p class="sub reveal">Offriamo servizi professionali di idraulico a Bologna. Ogni trattamento è personalizzato sulle tue esigenze.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-dot"></div>
+        <div class="service-name">Riparazioni perdite</div>
+        <div class="service-desc">Intervento rapido su perdite d'acqua, tubi rotti e infiltrazioni. Risolviamo in giornata.</div>
+        <div class="service-arrow">Scopri di più →</div>
+      </div>
+      <div class="service-card reveal" style="transition-delay:.06s">
+        <div class="service-dot"></div>
+        <div class="service-name">Caldaie e scaldabagni</div>
+        <div class="service-desc">Installazione, manutenzione e riparazione di caldaie e scaldabagni di tutte le marche.</div>
+        <div class="service-arrow">Scopri di più →</div>
+      </div>
+      <div class="service-card reveal" style="transition-delay:.12s">
+        <div class="service-dot"></div>
+        <div class="service-name">Impianti idraulici</div>
+        <div class="service-desc">Realizzazione e rifacimento completo di impianti idraulici civili e commerciali.</div>
+        <div class="service-arrow">Scopri di più →</div>
+      </div>
+      <div class="service-card reveal" style="transition-delay:.18s">
+        <div class="service-dot"></div>
+        <div class="service-name">Pronto intervento</div>
+        <div class="service-desc">Disponibili per emergenze idrauliche. Interveniamo rapidamente per bloccare i danni.</div>
+        <div class="service-arrow">Scopri di più →</div>
+      </div>
+      <div class="service-card reveal" style="transition-delay:.24s">
+        <div class="service-dot"></div>
+        <div class="service-name">Sanitari e bagni</div>
+        <div class="service-desc">Installazione e sostituzione di sanitari, rubinetteria, docce e vasche da bagno.</div>
+        <div class="service-arrow">Scopri di più →</div>
+      </div>
+      <div class="service-card reveal" style="transition-delay:.30s">
+        <div class="service-dot"></div>
+        <div class="service-name">Manutenzione ordinaria</div>
+        <div class="service-desc">Controllo e manutenzione periodica degli impianti per prevenire guasti e risparmiare.</div>
+        <div class="service-arrow">Scopri di più →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERIA -->
+<section class="gallery" id="lavori">
+  <div class="container gallery-inner">
+    <div class="gallery-left">
+      <h2 class="h2 reveal">Interventi a Bologna</h2>
+      <p class="sub reveal" style="margin-top:16px">Impianti realizzati a Bologna — precisione e sicurezza in ogni intervento.</p>
+      <div style="margin-top:32px" class="reveal" style="transition-delay:.1s">
+        <a href="tel:3517371644" class="btn btn-accent">📞 Richiedi preventivo</a>
+      </div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal"><img src="foto/foto1.jpg" alt="" onerror="this.style.background='rgba(255,255,255,.05)'"></div>
+      <div class="gallery-item reveal" style="transition-delay:.06s"><img src="foto/foto2.jpg" alt="" onerror="this.style.background='rgba(255,255,255,.05)'"></div>
+      <div class="gallery-item reveal" style="transition-delay:.12s"><img src="foto/foto3.jpg" alt="" onerror="this.style.background='rgba(255,255,255,.05)'"></div>
+      <div class="gallery-item reveal" style="transition-delay:.18s"><img src="foto/foto4.jpg" alt="" onerror="this.style.background='rgba(255,255,255,.05)'"></div>
+      <div class="gallery-item reveal" style="transition-delay:.24s"><img src="foto/foto5.jpg" alt="" onerror="this.style.background='rgba(255,255,255,.05)'"></div>
+    </div>
+  </div>
+</section>
+
+<!-- GARANZIA -->
+<section class="section guarantee" id="garanzia">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px">
+      <div class="tag reveal" style="justify-content:center">Perché sceglierci</div>
+      <h2 class="h2 reveal">La nostra <span>garanzia</span></h2>
+    </div>
+    <div class="guarantee-inner">
+      <div class="guarantee-item reveal">
+        <div class="guarantee-icon">⚡</div>
+        <div class="guarantee-title">Intervento rapido</div>
+        <div class="guarantee-desc">In giornata per le urgenze</div>
+      </div>
+      <div class="guarantee-item reveal" style="transition-delay:.08s">
+        <div class="guarantee-icon">📋</div>
+        <div class="guarantee-title">Preventivo gratuito</div>
+        <div class="guarantee-desc">Senza impegno e senza costi</div>
+      </div>
+      <div class="guarantee-item reveal" style="transition-delay:.16s">
+        <div class="guarantee-icon">✅</div>
+        <div class="guarantee-title">Garanzia lavori</div>
+        <div class="guarantee-desc">Ogni intervento è garantito</div>
+      </div>
+      <div class="guarantee-item reveal" style="transition-delay:.24s">
+        <div class="guarantee-icon">🔒</div>
+        <div class="guarantee-title">Prezzi trasparenti</div>
+        <div class="guarantee-desc">Nessuna sorpresa in fattura</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RECENSIONI -->
+<section class="section reviews" id="recensioni">
+  <div class="container">
+    <div class="reviews-header">
+      <div>
+        <div class="tag reveal">Cosa dicono di noi</div>
+        <h2 class="h2 reveal">Clienti <span>soddisfatti</span></h2>
+      </div>
+      <div class="reviews-badge reveal">
+        <div class="reviews-badge-num">5</div>
+        <div class="reviews-badge-detail">
+          <div class="reviews-badge-stars">★★★★★</div>
+          <div>27 recensioni Google</div>
+        </div>
+      </div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">“Ho avuto necessità urgente a causa di una rottura del raccordo della cassetta del wc, sabato 27 dicembre, difficile trovare qualcuno disponibile,”</p>
+        <div class="review-author">Nicola Cornforth</div>
+        <div class="review-when">Milano · 1 settimana fa</div>
+      </div>
+      <div class="review-card reveal" style="transition-delay:.1s">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">“Che dire.. intervento rapido. Tutto risolto. E poi anche puntuali che non è una sciocchezza. Prezzo giusto.”</p>
+        <div class="review-author">Luca Libanoro</div>
+        <div class="review-when">5 mesi fa</div>
+      </div>
+      <div class="review-card reveal" style="transition-delay:.2s">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">“Ho avuto il piacere di affidarmi a DHE Multiservice per un intervento su due cassette del WC: una sostituita completamente e l’altra con il galleggiante sostituito. I ragazzi si sono dimostrati davvero bravi, onesti,”</p>
+        <div class="review-author">Mark Bet’s</div>
+        <div class="review-when">1 anno fa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHI SIAMO -->
+<section class="about" id="chi-siamo">
+  <div class="container about-inner">
+    <div class="about-visual reveal">
+      <div class="about-img">
+        <img src="foto/foto2.jpg" alt="" onerror="this.parentElement.style.background='var(--gray)'">
+      </div>
+      <div class="about-badge">
+        <div class="about-badge-num">20+</div>
+        <div class="about-badge-text">anni di esperienza</div>
+      </div>
+    </div>
+    <div>
+      <div class="tag reveal">Chi siamo</div>
+      <h2 class="h2 reveal">Il tuo impianto, la nostra priorità</h2>
+      <p class="sub reveal" style="margin-top:16px">Siamo specializzati in impianti idraulici civili e commerciali. Dalla piccola perdita al rifacimento completo, affrontiamo ogni lavoro con la stessa professionalità e attenzione al dettaglio.</p>
+      <p class="sub reveal" style="margin-top:12px;transition-delay:.08s"></p>
+      <div class="about-points reveal" style="transition-delay:.12s">
+        <div class="about-point">
+          <div class="about-point-title">Tecnici certificati CEI</div>
+          <div class="about-point-desc">Aggiornamento continuo sulle normative</div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-title">Preventivo gratuito</div>
+          <div class="about-point-desc">Sopralluogo senza impegno</div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-title">Garanzia 2 anni</div>
+          <div class="about-point-desc">Su materiali e manodopera</div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-title">Intervento rapido</div>
+          <div class="about-point-desc">In giornata per le urgenze</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATTI -->
+<section class="contacts" id="contatti">
+  <div class="container contacts-inner">
+    <div>
+      <div class="contacts-title">
+        <div class="tag reveal">Contattaci</div>
+        <h2 class="h2 reveal">Parliamo del<br>tuo progetto</h2>
+      </div>
+      <div class="contacts-items">
+        <div class="contact-item reveal">
+          <div class="contact-icon">📞</div>
+          <div>
+            <div class="contact-label">Telefono</div>
+            <div class="contact-value"><a href="tel:3517371644">351 737 1644</a></div>
+          </div>
+        </div>
+        <div class="contact-item reveal" style="transition-delay:.06s">
+          <div class="contact-icon">💬</div>
+          <div>
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-value"><a href="https://wa.me/393517371644" target="_blank">Scrivici ora →</a></div>
+          </div>
+        </div>
+        <div class="contact-item reveal" style="transition-delay:.12s">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-label">Zona di intervento</div>
+            <div class="contact-value muted">Bologna e provincia</div>
+          </div>
+        </div>
+        <div class="contact-item reveal" style="transition-delay:.18s">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-label">Orari</div>
+            <div class="contact-value muted">Lun – Sab: 7:30 – 19:00 · Urgenze H24</div>
+          </div>
+        </div>
+      </div>
+      <div class="contacts-cta reveal">
+        <a href="tel:3517371644" class="btn btn-accent">📞 Chiama per un preventivo gratuito</a>
+      </div>
+    </div>
+    <div class="contacts-map reveal" style="transition-delay:.2s">
+            <iframe src="https://www.google.com/maps?q=Bologna,Italia&output=embed&hl=it" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo"><span>DHE Multiservice</span></div>
+        <p class="footer-desc">DHE Multiservice — idraulico professionale a Bologna. Intervento rapido, preventivo gratuito e lavoro garantito.</p>
+      </div>
+      <div>
+        <div class="footer-heading">Contatti</div>
+        <div class="footer-links">
+          <a href="tel:3517371644">📞 351 737 1644</a>
+          <a href="https://wa.me/393517371644" target="_blank">💬 WhatsApp</a>
+          <a>📍 Bologna e provincia</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">Servizi</div>
+        <div class="footer-links">
+          <a href="#servizi">Riparazioni perdite</a>
+          <a href="#servizi">Caldaie e scaldabagni</a>
+          <a href="#servizi">Impianti idraulici</a>
+          <a href="#servizi">Pronto intervento</a>
+          <a href="#servizi">Sanitari e bagni</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2026 DHE Multiservice. Tutti i diritti riservati.</div>
+      <div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE BAR -->
+<div class="mobile-bar">
+  <a href="tel:3517371644" class="mobile-bar-call">📞 Chiama</a>
+  <a href="https://wa.me/393517371644" target="_blank" class="mobile-bar-wa">💬 WhatsApp</a>
+</div>
+
+<!-- COOKIE -->
+<div class="cookie" id="cookie">
+  <span>Utilizziamo cookie tecnici per migliorare la navigazione. <a href="#" style="color:var(--accent)">Scopri di più</a></span>
+  <button class="cookie-btn" onclick="acceptCookie()">Accetta</button>
+</div>
+
+<script>
+const nav = document.getElementById('nav')
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20))
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') })
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' })
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el))
+
+function acceptCookie() {
+  localStorage.setItem('cookie_ok','1')
+  document.getElementById('cookie').classList.remove('show')
+}
+window.addEventListener('load', () => {
+  if(!localStorage.getItem('cookie_ok'))
+    setTimeout(() => document.getElementById('cookie').classList.add('show'), 1500)
+})
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'))
+    if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth'}) }
+  })
+})
+</script>
+</body>
+</html>
