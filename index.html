@@ -10,12 +10,12 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --blue:#2C2C2C;
-  --blue-mid:#F97316;
+  --blue:#0F2557;
+  --blue-mid:#1D4ED8;
   --blue-light:#F97316;
   --blue-pale:#f5f5f5;
-  --accent:#F97316;
-  --accent-dark:#1A1A1A;
+  --accent:#1D4ED8;
+  --accent-dark:#080F2A;
   --gray:#F8F9FB;
   --gray2:#EEF0F3;
   --gray3:#D1D5DB;
@@ -165,10 +165,10 @@ a{text-decoration:none;color:inherit}
 .contact-item{display:flex;align-items:flex-start;gap:16px;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.08)}
 .contact-item:last-child{border-bottom:none}
 .contact-icon{width:40px;height:40px;background:rgba(245,197,24,.12);border:1px solid rgba(245,197,24,.2);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px}
-.contact-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:4px}
+.contact-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.8);margin-bottom:4px}
 .contact-value{font-size:16px;font-weight:500;color:var(--white)}
 .contact-value a{color:var(--accent)}
-.contact-value.muted{font-size:14px;color:rgba(255,255,255,.6);font-weight:300;line-height:1.8}
+.contact-value.muted{font-size:14px;color:rgba(255,255,255,.85);font-weight:300;line-height:1.8}
 .contacts-map{border-radius:var(--radius2);overflow:hidden;height:420px;background:rgba(255,255,255,.05)}
 .contacts-map iframe{width:100%;height:100%;border:none}
 .contacts-cta{margin-top:32px}
@@ -178,15 +178,15 @@ a{text-decoration:none;color:inherit}
 .footer-inner{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:48px;margin-bottom:40px}
 .footer-logo{font-family:var(--font-title);font-size:24px;letter-spacing:1px;color:var(--white);margin-bottom:10px}
 .footer-logo span{color:var(--accent)}
-.footer-desc{font-size:14px;color:rgba(255,255,255,.4);line-height:1.7}
-.footer-heading{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:16px}
+.footer-desc{font-size:14px;color:rgba(255,255,255,.7);line-height:1.7}
+.footer-heading{font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:16px}
 .footer-links{display:flex;flex-direction:column;gap:10px}
-.footer-links a{font-size:14px;color:rgba(255,255,255,.5);transition:color .2s}
+.footer-links a{font-size:14px;color:rgba(255,255,255,.8);transition:color .2s}
 .footer-links a:hover{color:var(--white)}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.footer-copy{font-size:13px;color:rgba(255,255,255,.25)}
+.footer-copy{font-size:13px;color:rgba(255,255,255,.5)}
 .footer-legal{display:flex;gap:20px}
-.footer-legal a{font-size:13px;color:rgba(255,255,255,.25);transition:color .2s}
+.footer-legal a{font-size:13px;color:rgba(255,255,255,.5);transition:color .2s}
 .footer-legal a:hover{color:rgba(255,255,255,.5)}
 
 /* ── MOBILE BAR ── */
@@ -242,7 +242,7 @@ a{text-decoration:none;color:inherit}
       <a href="#recensioni">Recensioni</a>
       <a href="#contatti">Contatti</a>
     </div>
-    <a href="tel:3517371644" class="nav-cta">📞 Chiama ora</a>
+    <a href="tel:3517371644" class="nav-cta"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> Chiama ora</a>
   </div>
 </nav>
 
@@ -256,9 +256,9 @@ a{text-decoration:none;color:inherit}
     <div class="reveal">
       <div class="hero-label">Idraulico · Bologna</div>
       <h1 class="hero-title">Intervento rapido, problema risolto</h1>
-      <p class="hero-sub">Interventi rapidi su perdite, caldaie e impianti idrici a Bologna. Disponibile anche in emergenza.</p>
+      <p class="hero-sub">Il tuo idraulico di fiducia a Bologna — puntuale, professionale e senza sorprese in fattura.</p>
       <div class="hero-ctas">
-        <a href="tel:3517371644" class="btn btn-accent">📞 Chiama ora</a>
+        <a href="tel:3517371644" class="btn btn-accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> Chiama ora</a>
         <a href="https://wa.me/393517371644?text=Ciao,%20vorrei%20un%20preventivo" target="_blank" class="btn btn-ghost">💬 WhatsApp</a>
       </div>
     </div>
@@ -272,14 +272,6 @@ a{text-decoration:none;color:inherit}
         <div class="hero-stat">
           <div class="hero-stat-label">Recensioni verificate</div>
           <div class="hero-stat-value">27</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-label">Anni di esperienza</div>
-          <div class="hero-stat-value">20+</div>
-        </div>
-        <div class="hero-stat">
-          <div class="hero-stat-label">Interventi completati</div>
-          <div class="hero-stat-value">1.200+</div>
         </div>
       </div>
     </div>
@@ -296,7 +288,6 @@ a{text-decoration:none;color:inherit}
       <div><div class="statsbar-num">27</div><div class="statsbar-lbl">Recensioni</div></div>
     </div>
     <div class="statsbar-item reveal" style="transition-delay:.16s">
-      <div><div class="statsbar-num">20+</div><div class="statsbar-lbl">Anni</div></div>
     </div>
     <div class="statsbar-item reveal" style="transition-delay:.24s">
       <div><div class="statsbar-num">H24</div><div class="statsbar-lbl">Reperibile</div></div>
@@ -362,7 +353,7 @@ a{text-decoration:none;color:inherit}
       <h2 class="h2 reveal">Interventi a Bologna</h2>
       <p class="sub reveal" style="margin-top:16px">Impianti realizzati a Bologna — precisione e sicurezza in ogni intervento.</p>
       <div style="margin-top:32px" class="reveal" style="transition-delay:.1s">
-        <a href="tel:3517371644" class="btn btn-accent">📞 Richiedi preventivo</a>
+        <a href="tel:3517371644" class="btn btn-accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> Richiedi preventivo</a>
       </div>
     </div>
     <div class="gallery-grid">
@@ -428,7 +419,7 @@ a{text-decoration:none;color:inherit}
         <div class="review-stars">★★★★★</div>
         <p class="review-text">“Ho avuto necessità urgente a causa di una rottura del raccordo della cassetta del wc, sabato 27 dicembre, difficile trovare qualcuno disponibile,”</p>
         <div class="review-author">Nicola Cornforth</div>
-        <div class="review-when">Milano · 1 settimana fa</div>
+        <div class="review-when">Bologna · 1 settimana fa</div>
       </div>
       <div class="review-card reveal" style="transition-delay:.1s">
         <div class="review-stars">★★★★★</div>
@@ -453,15 +444,11 @@ a{text-decoration:none;color:inherit}
       <div class="about-img">
         <img src="foto/foto2.jpg" alt="" onerror="this.parentElement.style.background='var(--gray)'">
       </div>
-      <div class="about-badge">
-        <div class="about-badge-num">20+</div>
-        <div class="about-badge-text">anni di esperienza</div>
-      </div>
     </div>
-    <div>
+    <div class="about-content">
       <div class="tag reveal">Chi siamo</div>
-      <h2 class="h2 reveal">Il tuo impianto, la nostra priorità</h2>
-      <p class="sub reveal" style="margin-top:16px">Siamo specializzati in impianti idraulici civili e commerciali. Dalla piccola perdita al rifacimento completo, affrontiamo ogni lavoro con la stessa professionalità e attenzione al dettaglio.</p>
+      <h2 class="h2 reveal">Da anni al tuo servizio</h2>
+      <p class="sub reveal" style="margin-top:16px">Con anni di esperienza nel settore, offriamo interventi rapidi e soluzioni durature. Lavoriamo solo con materiali di qualità e rilasciamo sempre documentazione completa degli interventi eseguiti.</p>
       <p class="sub reveal" style="margin-top:12px;transition-delay:.08s"></p>
       <div class="about-points reveal" style="transition-delay:.12s">
         <div class="about-point">
@@ -495,28 +482,28 @@ a{text-decoration:none;color:inherit}
       </div>
       <div class="contacts-items">
         <div class="contact-item reveal">
-          <div class="contact-icon">📞</div>
+          <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></div>
           <div>
             <div class="contact-label">Telefono</div>
             <div class="contact-value"><a href="tel:3517371644">351 737 1644</a></div>
           </div>
         </div>
         <div class="contact-item reveal" style="transition-delay:.06s">
-          <div class="contact-icon">💬</div>
+          <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg></div>
           <div>
             <div class="contact-label">WhatsApp</div>
             <div class="contact-value"><a href="https://wa.me/393517371644" target="_blank">Scrivici ora →</a></div>
           </div>
         </div>
         <div class="contact-item reveal" style="transition-delay:.12s">
-          <div class="contact-icon">📍</div>
+          <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg></div>
           <div>
             <div class="contact-label">Zona di intervento</div>
             <div class="contact-value muted">Bologna e provincia</div>
           </div>
         </div>
         <div class="contact-item reveal" style="transition-delay:.18s">
-          <div class="contact-icon">🕐</div>
+          <div class="contact-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm.5 5v5.25l4.5 2.67-.75 1.23L11 13V7h1.5z"/></svg></div>
           <div>
             <div class="contact-label">Orari</div>
             <div class="contact-value muted">Lun – Sab: 7:30 – 19:00 · Urgenze H24</div>
@@ -524,7 +511,7 @@ a{text-decoration:none;color:inherit}
         </div>
       </div>
       <div class="contacts-cta reveal">
-        <a href="tel:3517371644" class="btn btn-accent">📞 Chiama per un preventivo gratuito</a>
+        <a href="tel:3517371644" class="btn btn-accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> Chiama per un preventivo gratuito</a>
       </div>
     </div>
     <div class="contacts-map reveal" style="transition-delay:.2s">
@@ -569,7 +556,7 @@ a{text-decoration:none;color:inherit}
 
 <!-- MOBILE BAR -->
 <div class="mobile-bar">
-  <a href="tel:3517371644" class="mobile-bar-call">📞 Chiama</a>
+  <a href="tel:3517371644" class="mobile-bar-call"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg> Chiama</a>
   <a href="https://wa.me/393517371644" target="_blank" class="mobile-bar-wa">💬 WhatsApp</a>
 </div>
 
